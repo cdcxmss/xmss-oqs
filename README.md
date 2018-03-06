@@ -20,31 +20,33 @@ Bouncy Castle Java releases: https://www.bouncycastle.org/java.html
 Instructions
 -------------
 
-./config -debug -g -ldl -fPIC -DPURIFY
+	chmod +x config
 
-make depend
+	./config -debug -g -ldl -fPIC -DPURIFY
 
-cd vendor/liboqs/
+	make depend
 
-make
+	cd vendor/liboqs/
 
-cd ../..
+	make
 
-make
+	cd ../..
 
-cd vendor/liboqs/src/xmss/
+	make
 
-./newcert_xmss.sh
+	cd vendor/liboqs/src/xmss/
 
-[Note: this will generate an XMSS (self-signed) certificate and the
-corresponding keys.]
+	./newcert_xmss.sh
 
-sudo ./ssl_server sk_xmss.pem cert_xmss.pem 443
+The previous script will generate an XMSS (self-signed) certificate and the
+corresponding keys.
+
+	sudo ./ssl_server sk_xmss.pem cert_xmss.pem 443
 
 In a separate terminal, while the server is still running, run the test client
 like so:
 
-./ssl_client http://localhost:443
+	./ssl_client http://localhost:443
 
 
 [Original open-quantum-safe/openssl README starts next line.]
