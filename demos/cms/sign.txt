@@ -1,0 +1,4 @@
+Content-type: text/plain
+
+Test OpenSSL CMS Signed Content
+This is the message that is signed.-DB
